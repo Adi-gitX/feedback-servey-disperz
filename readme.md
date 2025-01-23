@@ -254,6 +254,8 @@ package.json
        "answers": ["4", "Great service!"]
      }
      ```
+     
+** this is for testing purposes:
 
 ### Survey Endpoints
 
@@ -322,119 +324,5 @@ package.json
        }
      ]
      ```
-
-## Testing with Postman
-
-1. **Add User**
-   - Method: `POST`
-   - URL: `http://localhost:3000/admin/addUser`
-   - Body: JSON
-     ```json
-     {
-       "username": "newuser",
-       "password": "password123",
-       "role": "user"
-     }
-     ```
-
-2. **Remove User**
-   - Method: `DELETE`
-   - URL: `http://localhost:3000/admin/removeUser/<userId>`
-
-3. **Create Survey**
-   - Method: `POST`
-   - URL: `http://localhost:3000/admin/createSurvey`
-   - Body: JSON
-     ```json
-     {
-       "title": "Customer Satisfaction Survey",
-       "questions": [
-         {
-           "type": "rating",
-           "question": "How satisfied are you with our service?"
-         },
-         {
-           "type": "text",
-           "question": "Any suggestions?"
-         }
-       ]
-     }
-     ```
-
-4. **Assign Survey**
-   - Method: `POST`
-   - URL: `http://localhost:3000/admin/assignSurvey`
-   - Body: JSON
-     ```json
-     {
-       "surveyId": "surveyId",
-       "userIds": ["userId1", "userId2"]
-     }
-     ```
-
-5. **View Surveys**
-   - Method: `GET`
-   - URL: `http://localhost:3000/admin/viewSurveys`
-
-6. **View Survey Answers**
-   - Method: `GET`
-   - URL: `http://localhost:3000/admin/viewSurveyAnswers/<surveyId>`
-
-7. **Login**
-   - Method: `POST`
-   - URL: `http://localhost:3000/user/login`
-   - Body: JSON
-     ```json
-     {
-       "username": "newuser",
-       "password": "password123"
-     }
-     ```
-
-8. **Start Survey**
-   - Method: `POST`
-   - URL: `http://localhost:3000/user/startSurvey`
-   - Headers: `Authorization: Bearer <token>`
-   - Body: JSON
-     ```json
-     {
-       "surveyId": "surveyId",
-       "answers": ["4", "Great service!"]
-     }
-     ```
-
-9. **View Completed Surveys**
-   - Method: `GET`
-   - URL: `http://localhost:3000/user/viewCompletedSurveys`
-   - Headers: `Authorization: Bearer <token>`
-
-10. **View Survey Answers**
-    - Method: `GET`
-    - URL: `http://localhost:3000/user/viewSurveyAnswers/<surveyId>`
-    - Headers: `Authorization: Bearer <token>`
-
-11. **Get All Surveys**
-    - Method: `GET`
-    - URL: `http://localhost:3000/survey`
-
-12. **Get Survey by ID**
-    - Method: `GET`
-    - URL: `http://localhost:3000/survey/<surveyId>`
-
-13. **Submit Response**
-    - Method: `POST`
-    - URL: `http://localhost:3000/survey/response`
-    - Headers: `Authorization: Bearer <token>`
-    - Body: JSON
-      ```json
-      {
-        "surveyId": "surveyId",
-        "answers": ["4", "Great service!"]
-      }
-      ```
-
-14. **Get Responses by Survey**
-    - Method: `GET`
-    - URL: `http://localhost:3000/survey/responses/<surveyId>`
 
 This [README.md](http://_vscodecontentref_/11) file provides a comprehensive guide to all the endpoints available in the Feedback Survey Application, along with instructions on how to test them using Postman.
